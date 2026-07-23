@@ -1,0 +1,45 @@
+schema_version: 1
+profile_kind: technology
+id: godot
+name: Godot
+status: reference
+
+technology:
+  engine: Godot
+  language: GDScript
+  supported_engine_versions:
+    - "4.x"
+
+repository:
+  project_marker: project.godot
+  script_extensions:
+    - .gd
+  scene_extensions:
+    - .tscn
+  resource_extensions:
+    - .tres
+    - .res
+
+principles:
+  - Prefer engine-native capabilities before introducing dependencies.
+  - Keep scene composition explicit and reviewable.
+  - Treat imported and generated assets as derived content.
+  - Validate project loading independently from gameplay tests.
+
+validation:
+  executable_env_vars:
+    - GODOT_BIN
+    - GODOT_EXECUTABLE
+  default_executable_candidates:
+    - godot4
+    - godot
+  baseline_checks:
+    - project_load
+    - script_parse
+    - project_defined_tests
+
+context:
+  required_documents:
+    - constitution.md
+    - coding-standards.md
+    - validation.md
