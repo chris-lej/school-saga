@@ -33,8 +33,14 @@ godot --headless --path . --script tests/godot/player_controller_2d_test.gd
 log "Run follow camera test"
 godot --headless --path . --script tests/godot/follow_camera_2d_test.gd
 
+log "Run world scene contract test"
+godot --headless --path . --script tests/godot/world_scene_contract_test.gd
+
 log "Load player movement validation scene"
 godot --headless --path . scenes/validation/player_movement_validation.tscn --quit-after 2
+
+log "Load collision playground scene"
+godot --headless --path . scenes/validation/collision_playground.tscn --quit-after 2
 
 log "Export Godot Web build"
 bash scripts/export-web.sh --no-install
