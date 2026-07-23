@@ -1,0 +1,62 @@
+{
+	"arrival_observations": [
+		"The school gate is already open. A hand-painted sign for Colegio Monte Araucaria hangs beside a wall patched in two different shades of blue.",
+		"The courtyard is louder than the street: sneakers on concrete, a canteen shutter rattling, someone laughing before the joke reaches you.",
+		"No one pauses because you arrived. The morning has been moving for a while."
+	],
+	"classmates": [
+		{"id":"bia","name":"Bia","visual_identity":"yellow hair clip, green backpack, sticker album under one arm","routine":"trades duplicate stickers near the canteen line, then checks whether anyone saw her older cousin at the gate"},
+		{"id":"caio","name":"Caio","visual_identity":"rolled uniform sleeves, red futsal wristband, scuffed black sneakers","routine":"keeps a bottle-cap goal marked beside the bench and calls fouls that only he noticed"},
+		{"id":"luan","name":"Luan","visual_identity":"oversized glasses, blue notebook full of folded loose pages","routine":"copies tomorrow's homework from a friend while insisting he is only checking the date"},
+		{"id":"marina","name":"Marina","visual_identity":"braided ribbon, patched shoulder bag, tiny radio keychain","routine":"waits by the classroom door and hums the chorus leaking from the keychain speaker"}
+	],
+	"classroom_observations": [
+		"The classroom smells like chalk dust, floor wax, and rain that has not decided whether to start.",
+		"Desks scrape into old territories. Some seats already seem claimed even without names on them."
+	],
+	"relationship_memory": "A new student noticing who makes room, who pulls away, and which friendships keep moving when no one is watching.",
+	"recess_basketball": {
+		"memory_intent": "A loose recess game where watching, joining, or stepping away can become funny, awkward, warm, or tense without turning the moment into a score.",
+		"setup_observations": [
+			"By recess, the basketball hoop has a line of chipped paint under it and three different arguments about who is actually on whose team.",
+			"The ball sounds heavier than it looks when it hits the concrete. Someone has already declared the next point worth two, for reasons no one accepts."
+		],
+		"choices": [
+			{"id":"watch","label":"Watch from the low wall","outcome":"Caio attempts a no-look pass to impress the entire courtyard and sends the ball into a stack of plastic cups near the canteen. He points at the wind, though there is no wind.","later_behavior":"Later, Caio retells the disaster just loudly enough for your side of the bench, leaving a pause where shared laughter could fit.","relationship_effect":{"target":"caio","familiarity_delta":1,"trust_delta":0,"tone":"testing inclusion","behavior_feedback":"Caio starts performing mistakes like they might become private jokes if someone notices them twice."}},
+			{"id":"join","label":"Join when the ball rolls over","outcome":"The first pass reaches you at the wrong height. Your attempt becomes half catch, half self-defense, and the ball pops loose while everyone decides whether to laugh with you or at gravity.","later_behavior":"Later, Bia shifts her sticker album away from the scuffed court line and says the next team needs someone who can survive passes.","relationship_effect":{"target":"bia","familiarity_delta":1,"trust_delta":0,"tone":"prickly welcome","behavior_feedback":"Bia's teasing leaves a place inside it, as if the joke only works if you are still nearby."}},
+			{"id":"leave","label":"Leave for the canteen shade","outcome":"You step away just as teams are being counted again. A complaint follows your back, then gets swallowed by the canteen line and the smell of fried pastel.","later_behavior":"Later, Luan notices the quiet spot you chose and keeps one end of the bench unclaimed, while Caio counts teams without looking over.","relationship_effect":{"target":"luan","familiarity_delta":1,"trust_delta":0,"tone":"careful recognition","behavior_feedback":"Luan treats the choice to step away as information rather than a problem to fix."}}
+		]
+	},
+	"relationships": {
+		"player": {
+			"bia":{"familiarity":0,"trust":0,"tone":"measuring","behavior":"Bia keeps the sticker album close unless a shared desk gives her a reason to risk the corner of it."},
+			"caio":{"familiarity":0,"trust":0,"tone":"testing","behavior":"Caio saves his loudest commentary for people who laugh at the same moment he does."},
+			"luan":{"familiarity":0,"trust":0,"tone":"careful","behavior":"Luan shares paper before he shares certainty."},
+			"marina":{"familiarity":0,"trust":0,"tone":"quietly open","behavior":"Marina makes room through small gestures before she says anything direct."}
+		},
+		"npc": {"bia:caio":{"tension":0,"tone":"easy argument","behavior":"Bia and Caio can argue over a game and still end up near the same bench."}}
+	},
+	"seats": [
+		{"id":"front","label":"Front row near the teacher's desk","shared_with":"Luan","consequence":"Luan slides his notebook halfway between the desks when the teacher asks for yesterday's date. The margin has three different answers and one careful unsure dot.","relationship_effect":{"target":"luan","familiarity_delta":1,"trust_delta":1,"tone":"careful warmth","behavior_feedback":"At recess, Luan keeps the notebook open on the bench beside him, leaving enough space for another person without waving anyone over."}},
+		{"id":"window","label":"Window seat beside the faded curtain","shared_with":"Marina","consequence":"Marina catches the curtain before it snaps against your face. For the rest of roll call, the two of you share the same strip of moving light.","relationship_effect":{"target":"marina","familiarity_delta":1,"trust_delta":1,"tone":"quietly warmer","behavior_feedback":"At recess, Marina waits a little longer near the classroom door, then tilts her radio keychain so the chorus reaches your side of the hallway."}},
+		{"id":"middle","label":"Middle row between two conversations","shared_with":"Bia","consequence":"Bia parks her sticker album on the corner of your desk when the teacher turns to the board. One shiny duplicate stays there longer than an accident would.","relationship_effect":{"target":"bia","familiarity_delta":1,"trust_delta":1,"tone":"testing generosity","behavior_feedback":"At recess, Bia leaves one duplicate sticker face up on the bench between you and the canteen line, close enough to notice but not close enough to demand an answer."}},
+		{"id":"back","label":"Back row near the loose fan switch","shared_with":"Caio","consequence":"Caio taps the fan switch with a pencil and looks innocent when the blades cough awake. The first laugh reaches your desk before the teacher turns around.","relationship_effect":{"target":"caio","familiarity_delta":1,"trust_delta":0,"tone":"shared mischief","behavior_feedback":"At recess, Caio points his bottle-cap goal toward your side of the bench before pretending he only needed more space."}}
+	],
+	"independent_social_events": [
+		{"id":"sticker_goal_argument","relationship":"bia:caio","tension_delta":1,"tone":"prickly but unfinished","behavior_feedback":"Across the courtyard, Bia rescues a sticker from Caio's bottle-cap goal line. Caio complains to everyone except her, and a minute later the cap goal has moved two tiles away from her album."}
+	],
+	"rumors": [
+		{
+			"id":"radio_keychain_storage_room",
+			"source":{"id":"bia","name":"Bia","reliability_profile":{"pattern":"usually notices real details first, then adds confidence before the detail is finished","learnable_clues":["Bia checks the gate for her older cousin before anyone else mentions older students.","Bia rescues the sticker before Caio admits the bottle-cap goal moved.","Bia names the wrong storage room door, then corrects herself only when Marina's radio keychain crackles nearby."]}},
+			"state":"incomplete_or_conditional",
+			"truth_possibilities":["true","false","exaggerated","incomplete","conditional"],
+			"discovery":{"time_anchor":"late recess","place":"canteen shade beside the corridor to the storage rooms","requires_repeated_attention":["notice Bia's gate-checking routine on arrival","notice the Bia and Caio sticker-goal argument","linger after the basketball choice instead of saving immediately"]},
+			"memory_intent":"The first rumor should feel like overhearing a school myth halfway through, rewarding a player who remembers small contradictions without turning curiosity into an errand.",
+			"overheard_line":"Bia lowers her voice near the canteen shade: the little radio song gets clear beside the locked storage room only when the afternoon clouds cover the courtyard.",
+			"source_behavior":"She says it like proof, then changes 'storage room' to 'the other storage room' after Marina's keychain hisses with static.",
+			"follow_up_observation":"The corridor door stays locked. The radio keychain gives one clean chorus, then only the canteen freezer hums.",
+			"slice_end_status":"unresolved"
+		}
+	]
+}
