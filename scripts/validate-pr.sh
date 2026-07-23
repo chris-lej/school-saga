@@ -27,6 +27,9 @@ godot --headless --editor --path . --quit
 log "Load project and default scene"
 godot --headless --path . --quit-after 2
 
+log "Run home morning flow test"
+godot --headless --path . --script tests/godot/home_morning_flow_test.gd
+
 log "Run player controller test"
 godot --headless --path . --script tests/godot/player_controller_2d_test.gd
 
