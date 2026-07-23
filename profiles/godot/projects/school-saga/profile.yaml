@@ -1,0 +1,49 @@
+schema_version: 1
+profile_kind: project
+id: school-saga
+name: School Saga
+inherits: godot
+status: reference
+
+repository:
+  full_name: chris-lej/school-saga
+  default_branch: main
+  issue_tracker: github
+  source_of_truth: github
+
+technology:
+  engine: Godot
+  language: GDScript
+  engine_version: "4.x"
+
+workflow:
+  lifecycle_labels:
+    - state:ready
+    - state:implementing
+    - state:review
+    - state:merge
+    - state:done
+    - state:blocked
+    - state:retry
+    - state:abandoned
+
+context:
+  constitution: constitution.md
+  policy: context-policy.md
+  project_layout: project-layout.md
+  coding_standards: coding-standards.md
+  validation: validation.md
+  architecture_root: architecture
+  bibles_root: bibles
+  adr_root: adr
+
+validation:
+  command: ./scripts/validate-pr.sh
+  working_directory: .
+  produces: validation.json
+
+constraints:
+  - Do not infer missing project lore or architecture.
+  - Do not broaden an issue beyond its acceptance criteria.
+  - Do not introduce dependencies without explicit authorization.
+  - Preserve compatibility surfaces unless a breaking change is approved.
