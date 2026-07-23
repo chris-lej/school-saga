@@ -21,6 +21,9 @@ require_command git
 log "Verify Godot version"
 godot --version
 
+log "Import Godot resources"
+godot --headless --editor --path . --quit
+
 log "Load project and default scene"
 godot --headless --path . --quit-after 2
 
