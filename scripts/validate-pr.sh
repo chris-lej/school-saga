@@ -15,6 +15,7 @@ require_command() {
   fi
 }
 
+require_command python
 require_command godot
 require_command git
 
@@ -54,11 +55,8 @@ godot --headless --path . scenes/validation/collision_playground.tscn --quit-aft
 log "Export Godot Web build"
 bash scripts/export-web.sh --no-install
 
-log "Validate Web export artifacts"
-test -s build/web/index.html
-test -s build/web/index.js
-test -s build/web/index.wasm
-test -s build/web/index.pck
+log "Validate Web export and deployment contract"
+python scripts/validate-web-export.py
 
 log "Check patch formatting"
 git diff --check
