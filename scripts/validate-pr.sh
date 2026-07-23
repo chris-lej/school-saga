@@ -30,6 +30,9 @@ godot --headless --path . --quit-after 2
 log "Run home morning flow test"
 godot --headless --path . --script tests/godot/home_morning_flow_test.gd
 
+log "Run school first-day flow test"
+godot --headless --path . --script tests/godot/school_first_day_flow_test.gd
+
 log "Run player controller test"
 godot --headless --path . --script tests/godot/player_controller_2d_test.gd
 
