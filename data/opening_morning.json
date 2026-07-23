@@ -1,0 +1,32 @@
+{
+	"bedroom_observations": [
+		"The curtain is thin enough for the morning to arrive before anyone calls your name.",
+		"A bus exhales somewhere downhill. A dog answers from behind a metal gate.",
+		"Your notebook waits on the chair with yesterday's corner still bent."
+	],
+	"threshold_observations": [
+		"The sidewalk outside is already wet in patches, smelling faintly of soap and dust.",
+		"Wires cross the pale sky in patient lines. A neighbor's radio leaks through a half-open window.",
+		"The gate clicks shut behind you, small and final."
+	],
+	"breakfast_choices": [
+		{
+			"id": "pao_com_manteiga",
+			"label": "Pao com manteiga",
+			"kitchen_observation": "The butter melts unevenly, leaving one corner almost dry and another shining.",
+			"threshold_consequence": "Warm bread stays with you at the gate. The street feels a little easier to enter."
+		},
+		{
+			"id": "banana",
+			"label": "Banana from the fruit bowl",
+			"kitchen_observation": "The banana has one soft bruise that looks worse than it tastes.",
+			"threshold_consequence": "Your fingertips still carry the peel's green smell when you touch the gate latch."
+		},
+		{
+			"id": "skip",
+			"label": "Leave the plate alone",
+			"kitchen_observation": "The empty plate keeps its place on the table, catching the window light.",
+			"threshold_consequence": "At the gate, your stomach makes a private argument with the morning traffic."
+		}
+	]
+}
