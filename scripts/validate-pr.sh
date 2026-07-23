@@ -24,6 +24,15 @@ godot --version
 log "Load project and default scene"
 godot --headless --path . --quit-after 2
 
+log "Run player controller test"
+godot --headless --path . --script tests/godot/player_controller_2d_test.gd
+
+log "Run follow camera test"
+godot --headless --path . --script tests/godot/follow_camera_2d_test.gd
+
+log "Load player movement validation scene"
+godot --headless --path . scenes/validation/player_movement_validation.tscn --quit-after 2
+
 log "Export Godot Web build"
 bash scripts/export-web.sh --no-install
 
