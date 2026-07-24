@@ -17,6 +17,7 @@ from .merger import (
     MergerError,
     MergerRunResult,
 )
+from .orchestrator import DispatchResult, DryRunOrchestrator, Orchestrator, OrchestratorError
 from .reviewer import (
     DryRunReviewerAgent,
     ReviewFinding,
@@ -37,8 +38,10 @@ from .validation import (
 from .worker import DryRunWorkerAgent, WorkPlan, WorkerAgent, WorkerError, WorkerRunResult
 
 __all__ = [
+    "DispatchResult",
     "DryRunMergerAgent",
     "DryRunMutationExecutor",
+    "DryRunOrchestrator",
     "DryRunReviewerAgent",
     "DryRunWorkerAgent",
     "GitHubAdapter",
@@ -54,6 +57,8 @@ __all__ = [
     "MergerRunResult",
     "MutationCommand",
     "MutationKind",
+    "Orchestrator",
+    "OrchestratorError",
     "RepositoryTarget",
     "ReviewFinding",
     "ReviewReport",
