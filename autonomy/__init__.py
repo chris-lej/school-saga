@@ -10,6 +10,14 @@ from .github_adapter import (
     MutationKind,
 )
 from .store import JsonJobStore
+from .validation import (
+    SubprocessCommandRunner,
+    ValidationCommand,
+    ValidationRunResult,
+    ValidationService,
+    ValidationStatus,
+    ValidationStepResult,
+)
 
 __all__ = [
     "DryRunMutationExecutor",
@@ -22,4 +30,10 @@ __all__ = [
     "MutationCommand",
     "MutationKind",
     "RepositoryTarget",
+    "SubprocessCommandRunner",
+    "ValidationCommand",
+    "ValidationRunResult",
+    "ValidationService",
+    "ValidationStatus",
+    "ValidationStepResult",
 ]
