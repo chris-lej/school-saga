@@ -2,6 +2,7 @@ extends Control
 
 const SCHOOL_DATA_PATH: String = "res://data/school_first_day.json"
 const SCENE_PATH: String = "res://scenes/locations/school_first_day.tscn"
+const RETURN_HOME_SCENE_PATH: String = "res://scenes/locations/return_home.tscn"
 
 var selected_seat_id: String = ""
 var selected_basketball_choice_id: String = ""
@@ -188,6 +189,9 @@ func _show_basketball_outcome() -> void:
 	var save_button: Button = _make_button("Save the recess memory")
 	save_button.pressed.connect(_on_save_pressed)
 	_content.add_child(save_button)
+	var home_button: Button = _make_button("Head home after school")
+	home_button.pressed.connect(_on_return_home_pressed)
+	_content.add_child(home_button)
 
 func _on_rumor_observed() -> void:
 	_selected_rumor = _get_first_rumor()
@@ -218,8 +222,27 @@ func _show_rumor_observation() -> void:
 	var save_button: Button = _make_button("Save the recess memory")
 	save_button.pressed.connect(_on_save_pressed)
 	_content.add_child(save_button)
+	var home_button: Button = _make_button("Head home after school")
+	home_button.pressed.connect(_on_return_home_pressed)
+	_content.add_child(home_button)
 
 func _on_save_pressed() -> void:
+	var save_state: Dictionary = _build_school_save_state()
+	if SaveService.save_game(save_state):
+		_status_label.text = "The recess game settles into memory." if discovered_rumor.is_empty() else "The rumor stays unfinished in memory."
+	else:
+		_status_label.text = "The recess game slips before it can be saved."
+
+func _on_return_home_pressed() -> void:
+	var save_state: Dictionary = _build_school_save_state()
+	save_state["current_scene"] = RETURN_HOME_SCENE_PATH
+	if not SaveService.save_game(save_state):
+		_status_label.text = "The day slips before the walk home can begin."
+		return
+	if not SceneTransition.change_scene(RETURN_HOME_SCENE_PATH):
+		_status_label.text = "The road home stays just out of reach."
+
+func _build_school_save_state() -> Dictionary:
 	var save_state: Dictionary = SaveService.new_save_state()
 	var flags: Dictionary = {
 		"class_seat": selected_seat_id,
@@ -243,10 +266,7 @@ func _on_save_pressed() -> void:
 		save_state["debug_relationship_state"] = _relationship_state
 		if not _selected_rumor.is_empty():
 			save_state["debug_rumor"] = _selected_rumor
-	if SaveService.save_game(save_state):
-		_status_label.text = "The recess game settles into memory." if discovered_rumor.is_empty() else "The rumor stays unfinished in memory."
-	else:
-		_status_label.text = "The recess game slips before it can be saved."
+	return save_state
 
 func _apply_player_relationship_effect(effect: Dictionary) -> void:
 	var target_id: String = str(effect.get("target", ""))

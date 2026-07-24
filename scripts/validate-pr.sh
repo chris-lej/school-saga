@@ -37,11 +37,17 @@ godot --headless --path . scenes/locations/neighborhood_visual_validation.tscn -
 log "Load neighborhood-to-school transition scene"
 godot --headless --path . scenes/locations/neighborhood_to_school.tscn --quit-after 2
 
+log "Load return-home scene"
+godot --headless --path . scenes/locations/return_home.tscn --quit-after 2
+
 log "Run home morning flow test"
 godot --headless --path . --script tests/godot/home_morning_flow_test.gd
 
 log "Run school first-day flow test"
 godot --headless --path . --script tests/godot/school_first_day_flow_test.gd
+
+log "Run return-home flow test"
+godot --headless --path . --script tests/godot/return_home_flow_test.gd
 
 log "Run player controller test"
 godot --headless --path . --script tests/godot/player_controller_2d_test.gd
