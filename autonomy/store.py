@@ -24,6 +24,7 @@ class JsonJobStore:
             "jobs": {},
             "events": [],
             "operations": {},
+            "operation_results": {},
         }
 
     def _load(self) -> dict[str, Any]:
@@ -40,6 +41,7 @@ class JsonJobStore:
         for key in ("jobs", "events", "operations"):
             if key not in data:
                 raise ValueError(f"Corrupt autonomy store: missing {key!r}")
+        data.setdefault("operation_results", {})
         return data
 
     def _save(self, data: dict[str, Any]) -> None:
@@ -95,6 +97,40 @@ class JsonJobStore:
         if job_id is None:
             return events
         return [event for event in events if event["job_id"] == job_id]
+
+    def count_events(self, job_id: str, event_type: str) -> int:
+        return sum(
+            1
+            for event in self.list_events(job_id)
+            if event.get("event_type") == event_type
+        )
+
+    def get_operation_result(self, operation_id: str) -> dict[str, Any] | None:
+        result = self._load()["operation_results"].get(operation_id)
+        return dict(result) if result is not None else None
+
+    def record_operation_result(
+        self,
+        job_id: str,
+        operation_id: str,
+        result: dict[str, Any],
+        event: AuditEvent,
+    ) -> dict[str, Any]:
+        data = self._load()
+        existing_job_id = data["operations"].get(operation_id)
+        if existing_job_id is not None:
+            if existing_job_id != job_id:
+                raise ValueError(
+                    f"Operation {operation_id!r} already belongs to job {existing_job_id!r}"
+                )
+            return dict(data["operation_results"][operation_id])
+        if job_id not in data["jobs"]:
+            raise KeyError(f"Unknown job: {job_id}")
+        data["operations"][operation_id] = job_id
+        data["operation_results"][operation_id] = result
+        data["events"].append(asdict(event))
+        self._save(data)
+        return dict(result)
 
     def transition(self, job_id: str, target: JobState, operation_id: str) -> Job:
         data = self._load()
