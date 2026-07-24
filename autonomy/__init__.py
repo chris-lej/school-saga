@@ -18,9 +18,11 @@ from .validation import (
     ValidationStatus,
     ValidationStepResult,
 )
+from .worker import DryRunWorkerAgent, WorkPlan, WorkerAgent, WorkerError, WorkerRunResult
 
 __all__ = [
     "DryRunMutationExecutor",
+    "DryRunWorkerAgent",
     "GitHubAdapter",
     "GitHubAdapterError",
     "GuardedMutationExecutor",
@@ -36,4 +38,8 @@ __all__ = [
     "ValidationService",
     "ValidationStatus",
     "ValidationStepResult",
+    "WorkPlan",
+    "WorkerAgent",
+    "WorkerError",
+    "WorkerRunResult",
 ]
