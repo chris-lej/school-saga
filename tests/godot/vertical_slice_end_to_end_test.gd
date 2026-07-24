@@ -79,8 +79,8 @@ func _run() -> void:
 		return
 	root.add_child(return_home)
 	await process_frame
-	_expect(_has_button(return_home, "Save completed day"), "return-home flow can persist completion")
-	_press_button(return_home, "Save completed day")
+	_expect(_has_button(return_home, "Save the completed first day"), "return-home flow can persist completion")
+	_press_button(return_home, "Save the completed first day")
 	await process_frame
 
 	if save_service != null:
@@ -88,7 +88,7 @@ func _run() -> void:
 		var completed_flags: Dictionary = completed_state.get("flags", {})
 		var memory_log: Array = completed_state.get("memory_log", [])
 		_expect(bool(completed_flags.get("first_day_complete", false)), "completed route records first-day completion")
-		_expect(_memory_log_has(memory_log, "return_home_first_day"), "completed route appends return-home memory")
+		_expect(_memory_log_has(memory_log, "first_day_return_home"), "completed route appends return-home memory")
 
 	return_home.queue_free()
 	await process_frame
