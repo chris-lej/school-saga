@@ -34,6 +34,9 @@ godot --headless --path . scenes/bootstrap/placeholder_launch.tscn --quit-after 
 log "Load neighborhood visual validation scene"
 godot --headless --path . scenes/locations/neighborhood_visual_validation.tscn --quit-after 2
 
+log "Load neighborhood-to-school transition scene"
+godot --headless --path . scenes/locations/neighborhood_to_school.tscn --quit-after 2
+
 log "Run home morning flow test"
 godot --headless --path . --script tests/godot/home_morning_flow_test.gd
 
