@@ -9,6 +9,14 @@ from .github_adapter import (
     MutationCommand,
     MutationKind,
 )
+from .reviewer import (
+    DryRunReviewerAgent,
+    ReviewFinding,
+    ReviewReport,
+    ReviewerAgent,
+    ReviewerError,
+    ReviewerRunResult,
+)
 from .store import JsonJobStore
 from .validation import (
     SubprocessCommandRunner,
@@ -22,6 +30,7 @@ from .worker import DryRunWorkerAgent, WorkPlan, WorkerAgent, WorkerError, Worke
 
 __all__ = [
     "DryRunMutationExecutor",
+    "DryRunReviewerAgent",
     "DryRunWorkerAgent",
     "GitHubAdapter",
     "GitHubAdapterError",
@@ -32,6 +41,11 @@ __all__ = [
     "MutationCommand",
     "MutationKind",
     "RepositoryTarget",
+    "ReviewFinding",
+    "ReviewReport",
+    "ReviewerAgent",
+    "ReviewerError",
+    "ReviewerRunResult",
     "SubprocessCommandRunner",
     "ValidationCommand",
     "ValidationRunResult",
