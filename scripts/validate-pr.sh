@@ -49,6 +49,9 @@ godot --headless --path . --script tests/godot/school_first_day_flow_test.gd
 log "Run return-home flow test"
 godot --headless --path . --script tests/godot/return_home_flow_test.gd
 
+log "Run end-to-end vertical slice test"
+godot --headless --path . --script tests/godot/vertical_slice_end_to_end_test.gd
+
 log "Run player controller test"
 godot --headless --path . --script tests/godot/player_controller_2d_test.gd
 
