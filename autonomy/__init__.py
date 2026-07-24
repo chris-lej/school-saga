@@ -9,6 +9,14 @@ from .github_adapter import (
     MutationCommand,
     MutationKind,
 )
+from .merger import (
+    DryRunMergerAgent,
+    MergeFinding,
+    MergeReport,
+    MergerAgent,
+    MergerError,
+    MergerRunResult,
+)
 from .reviewer import (
     DryRunReviewerAgent,
     ReviewFinding,
@@ -29,6 +37,7 @@ from .validation import (
 from .worker import DryRunWorkerAgent, WorkPlan, WorkerAgent, WorkerError, WorkerRunResult
 
 __all__ = [
+    "DryRunMergerAgent",
     "DryRunMutationExecutor",
     "DryRunReviewerAgent",
     "DryRunWorkerAgent",
@@ -38,6 +47,11 @@ __all__ = [
     "Job",
     "JobState",
     "JsonJobStore",
+    "MergeFinding",
+    "MergeReport",
+    "MergerAgent",
+    "MergerError",
+    "MergerRunResult",
     "MutationCommand",
     "MutationKind",
     "RepositoryTarget",
