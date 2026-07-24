@@ -26,6 +26,16 @@ from .reviewer import (
     ReviewerError,
     ReviewerRunResult,
 )
+from .scheduler import (
+    BoundedScheduler,
+    ProductionReadinessManifest,
+    ScheduledDispatch,
+    Scheduler,
+    SchedulerConfig,
+    SchedulerCycleResult,
+    SchedulerLease,
+    SchedulerMode,
+)
 from .store import JsonJobStore
 from .validation import (
     SubprocessCommandRunner,
@@ -38,6 +48,7 @@ from .validation import (
 from .worker import DryRunWorkerAgent, WorkPlan, WorkerAgent, WorkerError, WorkerRunResult
 
 __all__ = [
+    "BoundedScheduler",
     "DispatchResult",
     "DryRunMergerAgent",
     "DryRunMutationExecutor",
@@ -59,12 +70,19 @@ __all__ = [
     "MutationKind",
     "Orchestrator",
     "OrchestratorError",
+    "ProductionReadinessManifest",
     "RepositoryTarget",
     "ReviewFinding",
     "ReviewReport",
     "ReviewerAgent",
     "ReviewerError",
     "ReviewerRunResult",
+    "ScheduledDispatch",
+    "Scheduler",
+    "SchedulerConfig",
+    "SchedulerCycleResult",
+    "SchedulerLease",
+    "SchedulerMode",
     "SubprocessCommandRunner",
     "ValidationCommand",
     "ValidationRunResult",
