@@ -1,7 +1,7 @@
 extends Control
 
 const MORNING_DATA_PATH: String = "res://data/opening_morning.json"
-const SCHOOL_FIRST_DAY_SCENE_PATH: String = "res://scenes/locations/school_first_day.tscn"
+const NEIGHBORHOOD_TO_SCHOOL_SCENE_PATH: String = "res://scenes/locations/neighborhood_to_school.tscn"
 const DEFAULT_PROTAGONIST_NAME: String = "Novo estudante"
 
 var protagonist_name: String = DEFAULT_PROTAGONIST_NAME
@@ -143,9 +143,9 @@ func _show_threshold(kitchen_observation: String, threshold_consequence: String)
 	save_button.pressed.connect(_on_save_pressed)
 	_content.add_child(save_button)
 
-	var school_button: Button = _make_button("Go to Colegio Monte Araucaria")
-	school_button.pressed.connect(_on_go_to_school_pressed)
-	_content.add_child(school_button)
+	var neighborhood_button: Button = _make_button("Step into Rua do Monte")
+	neighborhood_button.pressed.connect(_on_go_to_neighborhood_pressed)
+	_content.add_child(neighborhood_button)
 
 func _on_save_pressed() -> void:
 	var save_state: Dictionary = SaveService.new_save_state()
@@ -164,9 +164,9 @@ func _on_save_pressed() -> void:
 	else:
 		_status_label.text = "The morning slips before it can be saved."
 
-func _on_go_to_school_pressed() -> void:
-	if not SceneTransition.change_scene(SCHOOL_FIRST_DAY_SCENE_PATH):
-		_status_label.text = "The school morning stays just out of reach."
+func _on_go_to_neighborhood_pressed() -> void:
+	if not SceneTransition.change_scene(NEIGHBORHOOD_TO_SCHOOL_SCENE_PATH):
+		_status_label.text = "The neighborhood morning stays just out of reach."
 
 func _set_morning_light(color: Color) -> void:
 	_background.color = color
