@@ -1,6 +1,7 @@
 extends SceneTree
 
 const SCENE_PATH: String = "res://scenes/locations/home_morning.tscn"
+const NEIGHBORHOOD_SCENE_PATH: String = "res://scenes/locations/neighborhood_to_school.tscn"
 const SAVE_PATH: String = "user://save_slot_1.json"
 
 var _failures: Array[String] = []
@@ -58,6 +59,8 @@ func _run() -> void:
 	_expect(_has_label_containing(scene, "peel's green smell"), "threshold reflects the selected breakfast")
 	_expect(_has_label_containing(scene, "The gate clicks shut behind you"), "threshold observations are shown")
 	_expect(_has_button(scene, "Save this morning"), "threshold exposes save action")
+	_expect(_has_button(scene, "Step into Rua do Monte"), "threshold exposes neighborhood transition")
+	_expect(load(NEIGHBORHOOD_SCENE_PATH) is PackedScene, "neighborhood transition target loads")
 
 	_press_button(scene, "Save this morning")
 	await process_frame
