@@ -12,6 +12,14 @@ from .code_editing import (
     WorkspaceResult,
 )
 from .contracts import Job, JobState, RepositoryTarget
+from .deployment import (
+    DeploymentCommand,
+    DeploymentStateStore,
+    PersistedDeploymentState,
+    ProductionDeploymentConfig,
+    ProductionDeploymentRuntime,
+    scheduler_config,
+)
 from .git_workspace import GitWorkspaceBackend
 from .github_adapter import (
     DryRunMutationExecutor,
@@ -123,7 +131,9 @@ __all__ = [
     "CodeEditingError",
     "CodeEditingPolicy",
     "CodeEditingWorkerRunResult",
+    "DeploymentCommand",
     "DeploymentMode",
+    "DeploymentStateStore",
     "DispatchResult",
     "DryRunMergerAgent",
     "DryRunMutationExecutor",
@@ -154,9 +164,12 @@ __all__ = [
     "MutationKind",
     "Orchestrator",
     "OrchestratorError",
+    "PersistedDeploymentState",
     "ProductionActivationConfig",
     "ProductionActivationError",
     "ProductionActivationReport",
+    "ProductionDeploymentConfig",
+    "ProductionDeploymentRuntime",
     "ProductionLoopConfig",
     "ProductionLoopRunResult",
     "ProductionLoopStatus",
@@ -209,4 +222,5 @@ __all__ = [
     "WorkerAgent",
     "WorkerError",
     "WorkerRunResult",
+    "scheduler_config",
 ]
