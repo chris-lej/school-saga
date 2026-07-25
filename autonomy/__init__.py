@@ -29,6 +29,13 @@ from .github_adapter import (
     MutationCommand,
     MutationKind,
 )
+from .live_cli import (
+    ConcreteSchedulerFactory,
+    EnvironmentEmergencyStop,
+    FileLeaseRecord,
+    FileLeaseStore,
+    ProductionComposition,
+)
 from .merger import (
     DryRunMergerAgent,
     MergeFinding,
@@ -131,6 +138,7 @@ __all__ = [
     "CodeEditingError",
     "CodeEditingPolicy",
     "CodeEditingWorkerRunResult",
+    "ConcreteSchedulerFactory",
     "DeploymentCommand",
     "DeploymentMode",
     "DeploymentStateStore",
@@ -140,7 +148,10 @@ __all__ = [
     "DryRunOrchestrator",
     "DryRunReviewerAgent",
     "DryRunWorkerAgent",
+    "EnvironmentEmergencyStop",
     "FileChange",
+    "FileLeaseRecord",
+    "FileLeaseStore",
     "GitHubAdapter",
     "GitHubAdapterError",
     "GitWorkspaceBackend",
@@ -168,6 +179,7 @@ __all__ = [
     "ProductionActivationConfig",
     "ProductionActivationError",
     "ProductionActivationReport",
+    "ProductionComposition",
     "ProductionDeploymentConfig",
     "ProductionDeploymentRuntime",
     "ProductionLoopConfig",
