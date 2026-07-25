@@ -44,6 +44,14 @@ from .production_github import (
     ProductionMutationConfig,
     ProductionMutationExecutor,
 )
+from .production_loop import (
+    GuardedProductionLoop,
+    IssueCycleResult,
+    ProductionLoopConfig,
+    ProductionLoopRunResult,
+    ProductionLoopStatus,
+    ReviewDecision,
+)
 from .rehearsal import (
     GuardedRehearsalRunner,
     RehearsalError,
@@ -104,7 +112,9 @@ __all__ = [
     "GuardedGitHubMutationTransport",
     "GuardedMutationExecutor",
     "GuardedProductionActivation",
+    "GuardedProductionLoop",
     "GuardedRehearsalRunner",
+    "IssueCycleResult",
     "Job",
     "JobState",
     "JsonJobStore",
@@ -121,6 +131,9 @@ __all__ = [
     "ProductionActivationConfig",
     "ProductionActivationError",
     "ProductionActivationReport",
+    "ProductionLoopConfig",
+    "ProductionLoopRunResult",
+    "ProductionLoopStatus",
     "ProductionMutationConfig",
     "ProductionMutationExecutor",
     "ProductionReadinessManifest",
@@ -129,6 +142,7 @@ __all__ = [
     "RehearsalReport",
     "RehearsalStatus",
     "RepositoryTarget",
+    "ReviewDecision",
     "ReviewFinding",
     "ReviewReport",
     "ReviewerAgent",
