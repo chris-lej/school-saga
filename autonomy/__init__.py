@@ -35,6 +35,14 @@ from .production_github import (
     ProductionMutationConfig,
     ProductionMutationExecutor,
 )
+from .rehearsal import (
+    GuardedRehearsalRunner,
+    RehearsalError,
+    RehearsalGate,
+    RehearsalReport,
+    RehearsalStatus,
+    StaticEmergencyStop,
+)
 from .reviewer import (
     DryRunReviewerAgent,
     ReviewFinding,
@@ -84,6 +92,7 @@ __all__ = [
     "GuardedCodeEditingWorker",
     "GuardedGitHubMutationTransport",
     "GuardedMutationExecutor",
+    "GuardedRehearsalRunner",
     "Job",
     "JobState",
     "JsonJobStore",
@@ -100,6 +109,10 @@ __all__ = [
     "ProductionMutationConfig",
     "ProductionMutationExecutor",
     "ProductionReadinessManifest",
+    "RehearsalError",
+    "RehearsalGate",
+    "RehearsalReport",
+    "RehearsalStatus",
     "RepositoryTarget",
     "ReviewFinding",
     "ReviewReport",
@@ -112,6 +125,7 @@ __all__ = [
     "SchedulerCycleResult",
     "SchedulerLease",
     "SchedulerMode",
+    "StaticEmergencyStop",
     "SubprocessCommandRunner",
     "ValidationCommand",
     "ValidationRunResult",
