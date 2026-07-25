@@ -88,6 +88,12 @@ from .scheduler import (
     SchedulerMode,
 )
 from .store import JsonJobStore
+from .supervised_activation import (
+    SupervisedActivationConfig,
+    SupervisedActivationReport,
+    SupervisedActivationStatus,
+    SupervisedProductionActivation,
+)
 from .validation import (
     SubprocessCommandRunner,
     ValidationCommand,
@@ -173,6 +179,10 @@ __all__ = [
     "StaticProductionPreflight",
     "StaticReadinessProbe",
     "SubprocessCommandRunner",
+    "SupervisedActivationConfig",
+    "SupervisedActivationReport",
+    "SupervisedActivationStatus",
+    "SupervisedProductionActivation",
     "ValidationCommand",
     "ValidationRunResult",
     "ValidationService",
