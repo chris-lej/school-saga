@@ -12,6 +12,7 @@ from .code_editing import (
     WorkspaceResult,
 )
 from .contracts import Job, JobState, RepositoryTarget
+from .git_workspace import GitWorkspaceBackend
 from .github_adapter import (
     DryRunMutationExecutor,
     GitHubAdapter,
@@ -79,6 +80,7 @@ __all__ = [
     "FileChange",
     "GitHubAdapter",
     "GitHubAdapterError",
+    "GitWorkspaceBackend",
     "GuardedCodeEditingWorker",
     "GuardedGitHubMutationTransport",
     "GuardedMutationExecutor",
