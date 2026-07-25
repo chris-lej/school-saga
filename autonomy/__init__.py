@@ -59,6 +59,14 @@ from .production_github import (
     ProductionMutationConfig,
     ProductionMutationExecutor,
 )
+from .production_launcher import (
+    ConcreteLifecycleRuntime,
+    ConcreteReadinessVerifier,
+    LauncherEnvironment,
+    ProductionLauncher,
+    redacted_config,
+    run_launcher,
+)
 from .production_loop import (
     GuardedProductionLoop,
     IssueCycleResult,
@@ -138,6 +146,8 @@ __all__ = [
     "CodeEditingError",
     "CodeEditingPolicy",
     "CodeEditingWorkerRunResult",
+    "ConcreteLifecycleRuntime",
+    "ConcreteReadinessVerifier",
     "ConcreteSchedulerFactory",
     "DeploymentCommand",
     "DeploymentMode",
@@ -165,6 +175,7 @@ __all__ = [
     "Job",
     "JobState",
     "JsonJobStore",
+    "LauncherEnvironment",
     "LocalWorkspaceBackend",
     "MergeFinding",
     "MergeReport",
@@ -182,6 +193,7 @@ __all__ = [
     "ProductionComposition",
     "ProductionDeploymentConfig",
     "ProductionDeploymentRuntime",
+    "ProductionLauncher",
     "ProductionLoopConfig",
     "ProductionLoopRunResult",
     "ProductionLoopStatus",
@@ -234,5 +246,7 @@ __all__ = [
     "WorkerAgent",
     "WorkerError",
     "WorkerRunResult",
+    "redacted_config",
+    "run_launcher",
     "scheduler_config",
 ]
