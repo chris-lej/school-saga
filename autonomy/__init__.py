@@ -35,6 +35,12 @@ from .production_github import (
     ProductionMutationConfig,
     ProductionMutationExecutor,
 )
+from .production_worker import (
+    GuardedProductionWorkerRunner,
+    ProductionWorkerActivationError,
+    ProductionWorkerManifest,
+    ProductionWorkerReport,
+)
 from .rehearsal import (
     GuardedRehearsalRunner,
     RehearsalError,
@@ -92,6 +98,7 @@ __all__ = [
     "GuardedCodeEditingWorker",
     "GuardedGitHubMutationTransport",
     "GuardedMutationExecutor",
+    "GuardedProductionWorkerRunner",
     "GuardedRehearsalRunner",
     "Job",
     "JobState",
@@ -109,6 +116,9 @@ __all__ = [
     "ProductionMutationConfig",
     "ProductionMutationExecutor",
     "ProductionReadinessManifest",
+    "ProductionWorkerActivationError",
+    "ProductionWorkerManifest",
+    "ProductionWorkerReport",
     "RehearsalError",
     "RehearsalGate",
     "RehearsalReport",
