@@ -1,5 +1,16 @@
 """Autonomous engineering platform v2 foundation."""
 
+from .code_editing import (
+    CodeEditPlan,
+    CodeEditingBackend,
+    CodeEditingError,
+    CodeEditingPolicy,
+    CodeEditingWorkerRunResult,
+    FileChange,
+    GuardedCodeEditingWorker,
+    LocalWorkspaceBackend,
+    WorkspaceResult,
+)
 from .contracts import Job, JobState, RepositoryTarget
 from .github_adapter import (
     DryRunMutationExecutor,
@@ -54,19 +65,27 @@ from .worker import DryRunWorkerAgent, WorkPlan, WorkerAgent, WorkerError, Worke
 
 __all__ = [
     "BoundedScheduler",
+    "CodeEditPlan",
+    "CodeEditingBackend",
+    "CodeEditingError",
+    "CodeEditingPolicy",
+    "CodeEditingWorkerRunResult",
     "DispatchResult",
     "DryRunMergerAgent",
     "DryRunMutationExecutor",
     "DryRunOrchestrator",
     "DryRunReviewerAgent",
     "DryRunWorkerAgent",
+    "FileChange",
     "GitHubAdapter",
     "GitHubAdapterError",
+    "GuardedCodeEditingWorker",
     "GuardedGitHubMutationTransport",
     "GuardedMutationExecutor",
     "Job",
     "JobState",
     "JsonJobStore",
+    "LocalWorkspaceBackend",
     "MergeFinding",
     "MergeReport",
     "MergerAgent",
@@ -97,6 +116,7 @@ __all__ = [
     "ValidationService",
     "ValidationStatus",
     "ValidationStepResult",
+    "WorkspaceResult",
     "WorkPlan",
     "WorkerAgent",
     "WorkerError",
