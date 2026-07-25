@@ -18,6 +18,11 @@ from .merger import (
     MergerRunResult,
 )
 from .orchestrator import DispatchResult, DryRunOrchestrator, Orchestrator, OrchestratorError
+from .production_github import (
+    GuardedGitHubMutationTransport,
+    ProductionMutationConfig,
+    ProductionMutationExecutor,
+)
 from .reviewer import (
     DryRunReviewerAgent,
     ReviewFinding,
@@ -57,6 +62,7 @@ __all__ = [
     "DryRunWorkerAgent",
     "GitHubAdapter",
     "GitHubAdapterError",
+    "GuardedGitHubMutationTransport",
     "GuardedMutationExecutor",
     "Job",
     "JobState",
@@ -70,6 +76,8 @@ __all__ = [
     "MutationKind",
     "Orchestrator",
     "OrchestratorError",
+    "ProductionMutationConfig",
+    "ProductionMutationExecutor",
     "ProductionReadinessManifest",
     "RepositoryTarget",
     "ReviewFinding",
