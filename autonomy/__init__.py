@@ -30,6 +30,15 @@ from .merger import (
     MergerRunResult,
 )
 from .orchestrator import DispatchResult, DryRunOrchestrator, Orchestrator, OrchestratorError
+from .production_activation import (
+    ActivationGate,
+    ActivationStatus,
+    GuardedProductionActivation,
+    ProductionActivationConfig,
+    ProductionActivationError,
+    ProductionActivationReport,
+    StaticProductionPreflight,
+)
 from .production_github import (
     GuardedGitHubMutationTransport,
     ProductionMutationConfig,
@@ -73,6 +82,8 @@ from .validation import (
 from .worker import DryRunWorkerAgent, WorkPlan, WorkerAgent, WorkerError, WorkerRunResult
 
 __all__ = [
+    "ActivationGate",
+    "ActivationStatus",
     "BoundedScheduler",
     "CodeEditPlan",
     "CodeEditingBackend",
@@ -92,6 +103,7 @@ __all__ = [
     "GuardedCodeEditingWorker",
     "GuardedGitHubMutationTransport",
     "GuardedMutationExecutor",
+    "GuardedProductionActivation",
     "GuardedRehearsalRunner",
     "Job",
     "JobState",
@@ -106,6 +118,9 @@ __all__ = [
     "MutationKind",
     "Orchestrator",
     "OrchestratorError",
+    "ProductionActivationConfig",
+    "ProductionActivationError",
+    "ProductionActivationReport",
     "ProductionMutationConfig",
     "ProductionMutationExecutor",
     "ProductionReadinessManifest",
@@ -126,6 +141,7 @@ __all__ = [
     "SchedulerLease",
     "SchedulerMode",
     "StaticEmergencyStop",
+    "StaticProductionPreflight",
     "SubprocessCommandRunner",
     "ValidationCommand",
     "ValidationRunResult",
